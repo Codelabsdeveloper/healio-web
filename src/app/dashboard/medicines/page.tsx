@@ -26,9 +26,9 @@ export default function MedicinesPage() {
   const [orderPlaced, setOrderPlaced] = useState(false);
 
   return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold text-dark mb-2">Order medicines</h1>
-      <p className="text-gray-600 mb-8">
+    <div className="p-4 sm:p-6 md:p-8">
+      <h1 className="text-xl sm:text-2xl font-bold text-dark mb-2">Order medicines</h1>
+      <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
         Scrollable list of medicines with details. E-prescription from partner doctors is
         verified; orders are back-linked to health records. Backend checks and telephonic
         verification apply. For Schedule G/X and when prompted, push notification to prescribing
@@ -53,7 +53,7 @@ export default function MedicinesPage() {
         {mockMedicines.map((med) => (
           <div
             key={med.id}
-            className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+            className="p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4"
           >
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
@@ -77,7 +77,7 @@ export default function MedicinesPage() {
                 )}
               </div>
             </div>
-            <Button onClick={() => setOrderPlaced(true)}>Order now</Button>
+            <Button onClick={() => setOrderPlaced(true)} className="min-h-[44px] touch-manipulation w-full sm:w-auto">Order now</Button>
           </div>
         ))}
       </div>

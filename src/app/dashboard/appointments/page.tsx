@@ -37,9 +37,9 @@ export default function AppointmentsPage() {
   const [showCalendar, setShowCalendar] = useState(false);
 
   return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold text-dark mb-2">Book an appointment</h1>
-      <p className="text-gray-600 mb-8">
+    <div className="p-4 sm:p-6 md:p-8">
+      <h1 className="text-xl sm:text-2xl font-bold text-dark mb-2">Book an appointment</h1>
+      <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
         Partner doctors across specialties. Select a doctor, choose a slot, and get confirmation
         plus reminders via app, WhatsApp, and call.
       </p>
@@ -50,7 +50,7 @@ export default function AppointmentsPage() {
           {mockDoctors.map((doc) => (
             <div
               key={doc.id}
-              className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm"
+              className="p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
@@ -85,6 +85,7 @@ export default function AppointmentsPage() {
                       setSelectedDoctor(doc.id);
                       setShowCalendar(true);
                     }}
+                    className="min-h-[44px] touch-manipulation w-full sm:w-auto"
                   >
                     Book appointment
                   </Button>
@@ -96,7 +97,7 @@ export default function AppointmentsPage() {
       </div>
 
       {showCalendar && selectedDoctor && (
-        <div className="mt-8 p-6 bg-white rounded-2xl border border-gray-100 shadow-sm max-w-lg">
+        <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm max-w-lg">
           <h3 className="font-bold mb-4">Select date & time</h3>
           <p className="text-sm text-gray-500 mb-4">
             Choose an available slot. You&apos;ll get a confirmation and reminders before the

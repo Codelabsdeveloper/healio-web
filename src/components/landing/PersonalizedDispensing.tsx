@@ -2,11 +2,11 @@ import { CheckCircle, FlaskConical } from 'lucide-react';
 
 export function PersonalizedDispensing() {
   return (
-    <section className="py-20 bg-dark text-white overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="relative">
-            <div className="w-full max-w-sm mx-auto bg-white rounded-2xl p-8 text-dark shadow-2xl relative rotate-3 hover:rotate-0 transition-transform duration-500">
+    <section className="py-12 sm:py-16 md:py-20 bg-dark text-white overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <div className="relative order-2 md:order-1">
+            <div className="w-full max-w-sm mx-auto bg-white rounded-2xl p-4 sm:p-6 md:p-8 text-dark shadow-2xl relative rotate-0 md:rotate-3 md:hover:rotate-0 transition-transform duration-500">
               <div className="text-center space-y-4">
                 <div className="w-20 h-2 bg-primary mx-auto rounded-full" />
                 <div className="text-left space-y-2 py-4 border-y border-gray-100">
@@ -33,23 +33,23 @@ export function PersonalizedDispensing() {
                 PATIENT-SPECIFIC
               </div>
             </div>
-            <div className="absolute -bottom-10 right-0 w-64 bg-gray-100 rounded-2xl p-6 text-dark shadow-2xl -rotate-6 hidden md:block">
+            <div className="absolute -bottom-10 right-0 w-48 sm:w-64 bg-gray-100 rounded-2xl p-4 sm:p-6 text-dark shadow-2xl -rotate-6 hidden md:block">
               <p className="text-[10px] text-gray-400 font-bold uppercase">Medicine</p>
               <p className="font-bold text-primary">Telmisartan 40mg</p>
               <p className="text-xs text-gray-500">Daily Morning</p>
             </div>
           </div>
 
-          <div className="space-y-6">
-            <h2 className="text-4xl font-bold">
+          <div className="space-y-4 sm:space-y-6 order-1 md:order-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
               First-of-its-kind Personalized Dispensing
             </h2>
-            <p className="text-gray-400 text-lg leading-relaxed">
+            <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
               Say goodbye to confusing blister strips. We dispense medicines in customized,
               patient-specific bottles. Each bottle is clearly labeled with your name, strength,
               and exact usage instructions.
             </p>
-            <div className="grid grid-cols-2 gap-6 pt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pt-4">
               {[
                 'Eliminates consumption errors for elderly patients',
                 'Improved adherence tracking through Meds App',
@@ -58,11 +58,11 @@ export function PersonalizedDispensing() {
               ].map((text) => (
                 <div key={text} className="flex items-start gap-3">
                   <CheckCircle className="text-secondary shrink-0 mt-1 w-5 h-5" />
-                  <p className="text-sm">{text}</p>
+                  <p className="text-sm min-w-0">{text}</p>
                 </div>
               ))}
             </div>
-            <div className="pt-6">
+            <div className="pt-4 sm:pt-6">
               <div className="bg-primary/20 border border-primary/50 p-4 rounded-xl flex items-center gap-4">
                 <FlaskConical className="text-2xl text-primary w-8 h-8" />
                 <div>

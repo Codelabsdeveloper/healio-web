@@ -84,7 +84,7 @@ export default function SignUpPage() {
   return (
     <div className="min-h-screen bg-light flex flex-col">
       <header className="border-b border-gray-200 bg-white">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <Link href={ROUTES.HOME} className="flex items-center gap-2 w-fit">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
               <SquarePlus className="text-white w-5 h-5" />
@@ -99,7 +99,7 @@ export default function SignUpPage() {
         </div>
       </header>
 
-      <main className="flex-1 flex items-center justify-center px-6 py-8">
+      <main className="flex-1 flex items-center justify-center px-4 sm:px-6 py-6 sm:py-8 overflow-auto">
         <div className="w-full max-w-md">
           <div className="mb-6">
             <p className="text-sm text-gray-500">
@@ -114,9 +114,9 @@ export default function SignUpPage() {
           </div>
 
           {step === 'details' && (
-            <div className="space-y-4">
-              <h1 className="text-2xl font-bold text-dark">Create your account</h1>
-              <p className="text-gray-600 text-sm">
+            <div className="space-y-3 sm:space-y-4">
+              <h1 className="text-xl sm:text-2xl font-bold text-dark">Create your account</h1>
+              <p className="text-gray-600 text-xs sm:text-sm">
                 Enter your details as per Aadhaar. We&apos;ll verify with OTP.
               </p>
               <Input
@@ -183,7 +183,7 @@ export default function SignUpPage() {
                 onChange={(e) => update('email', e.target.value)}
                 error={errors.email}
               />
-              <Button className="w-full" size="lg" onClick={next}>
+              <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={next}>
                 Continue – Verify mobile with OTP
               </Button>
             </div>
@@ -210,7 +210,7 @@ export default function SignUpPage() {
               >
                 Resend OTP
               </button>
-              <Button className="w-full" size="lg" onClick={next}>
+              <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={next}>
                 Verify & continue
               </Button>
             </div>
@@ -230,7 +230,7 @@ export default function SignUpPage() {
                 placeholder="000000"
                 maxLength={6}
               />
-              <Button className="w-full" size="lg" onClick={next}>
+              <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={next}>
                 Verify & continue
               </Button>
             </div>
@@ -252,7 +252,7 @@ export default function SignUpPage() {
                 placeholder="12-digit Aadhaar"
                 maxLength={12}
               />
-              <Button className="w-full" size="lg" onClick={next}>
+              <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={next}>
                 Generate OTP
               </Button>
             </div>
@@ -274,7 +274,7 @@ export default function SignUpPage() {
                 placeholder="000000"
                 maxLength={6}
               />
-              <Button className="w-full" size="lg" onClick={next}>
+              <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={next}>
                 Verify Aadhaar
               </Button>
             </div>
@@ -310,7 +310,7 @@ export default function SignUpPage() {
                 maxLength={4}
                 inputMode="numeric"
               />
-              <Button className="w-full" size="lg" onClick={next}>
+              <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={next}>
                 Complete signup
               </Button>
             </div>
@@ -325,7 +325,7 @@ export default function SignUpPage() {
               <p className="text-gray-600">
                 You can now sign in with your mobile/email and 4-digit PIN.
               </p>
-              <Button className="w-full" size="lg" onClick={next}>
+              <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={next}>
                 Go to Sign in
               </Button>
             </div>

@@ -21,7 +21,7 @@ export function Navbar() {
   return (
     <>
       <nav className="fixed w-full z-50 glass-morphism shadow-sm">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
           <Logo />
           <div className="hidden md:flex gap-8 items-center font-medium">
             {navLinks.map((link) => (
@@ -50,7 +50,7 @@ export function Navbar() {
 
       <div
         className={cn(
-          'fixed inset-0 bg-dark/95 z-[60] flex flex-col items-center justify-center gap-8 text-white text-2xl font-bold transition-transform duration-300',
+          'fixed inset-0 bg-dark/95 z-[60] flex flex-col items-center justify-center gap-6 sm:gap-8 text-white text-xl sm:text-2xl font-bold transition-transform duration-300 safe-area-padding',
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
@@ -74,7 +74,7 @@ export function Navbar() {
         ))}
         <Link
           href={ROUTES.GET_STARTED}
-          className="bg-primary px-8 py-3 rounded-full hover:bg-primary-700 transition"
+          className="bg-primary px-8 py-3 rounded-full hover:bg-primary-700 transition min-h-[44px] inline-flex items-center justify-center touch-manipulation"
           onClick={() => setMobileOpen(false)}
         >
           Get Started

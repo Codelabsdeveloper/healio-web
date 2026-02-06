@@ -44,19 +44,19 @@ const cards = [
 
 export default function DashboardHomePage() {
   return (
-    <div className="p-8">
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-dark">Welcome back</h1>
-        <p className="text-gray-600 mt-1">
+    <div className="p-4 sm:p-6 md:p-8">
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-xl sm:text-2xl font-bold text-dark">Welcome back</h1>
+        <p className="text-gray-600 mt-1 text-sm sm:text-base">
           Manage your subscription, appointments, labs, and medicines from one dashboard.
         </p>
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {cards.map(({ href, title, description, icon: Icon }) => (
           <Link
             key={href}
             href={href}
-            className="group block p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/20 transition"
+            className="group block p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/20 transition touch-manipulation"
           >
             <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition">
               <Icon className="w-6 h-6" />

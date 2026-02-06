@@ -2,10 +2,10 @@ import { QrCode } from 'lucide-react';
 
 export default function SubscriptionPage() {
   return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold text-dark mb-6">My subscription</h1>
-      <div className="max-w-2xl space-y-6">
-        <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+    <div className="p-4 sm:p-6 md:p-8">
+      <h1 className="text-xl sm:text-2xl font-bold text-dark mb-4 sm:mb-6">My subscription</h1>
+      <div className="max-w-2xl space-y-4 sm:space-y-6">
+        <div className="p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm">
           <h2 className="font-bold text-lg mb-2">Meds Chronic Plan</h2>
           <p className="text-gray-600 text-sm mb-4">
             Unlimited 50+ common generic medicines, specialist consultation, personalized
@@ -17,7 +17,7 @@ export default function SubscriptionPage() {
           </div>
           <p className="text-sm text-gray-500 mt-2">Validity: Active until 5 Mar 2026</p>
         </div>
-        <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+        <div className="p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm">
           <h3 className="font-bold mb-2">Dynamic QR code</h3>
           <p className="text-sm text-gray-600 mb-4">
             Use this QR at partner pharmacies for authentication and coin redeem process.

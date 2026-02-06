@@ -18,9 +18,9 @@ const clinicalLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-dark text-white pt-20 pb-10">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-dark text-white pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-16">
           <div>
             <div className="flex items-center gap-2 mb-6">
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
@@ -89,10 +89,10 @@ export function Footer() {
             <p className="text-sm text-gray-400">Available in Select Cities Across India</p>
           </div>
         </div>
-        <hr className="border-white/10 mb-8" />
-        <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+        <hr className="border-white/10 mb-6 sm:mb-8" />
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 text-center md:text-left">
           <p>&copy; {new Date().getFullYear()} Healio MedHealth. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             <Link href="#" className="hover:text-white transition">
               Privacy Policy
             </Link>

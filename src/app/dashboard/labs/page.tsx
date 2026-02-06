@@ -33,19 +33,19 @@ export default function LabsPage() {
   const [selectedTest, setSelectedTest] = useState<string | null>(null);
 
   return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold text-dark mb-2">Order labs</h1>
-      <p className="text-gray-600 mb-8">
+    <div className="p-4 sm:p-6 md:p-8">
+      <h1 className="text-xl sm:text-2xl font-bold text-dark mb-2">Order labs</h1>
+      <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
         Condition-specific, comprehensive, annual, or custom tests. Book by date and preferred
         time. Get confirmation and reminders (app, WhatsApp, call) and track from booking to
         report.
       </p>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
         {mockTests.map((test) => (
           <div
             key={test.id}
-            className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm"
+            className="p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm"
           >
             <div className="flex items-center gap-2 text-primary mb-2">
               <FlaskConical className="w-5 h-5" />
@@ -61,7 +61,7 @@ export default function LabsPage() {
               ))}
             </ul>
             <Button
-              className="w-full"
+              className="w-full min-h-[44px] touch-manipulation"
               onClick={() => setSelectedTest(selectedTest === test.id ? null : test.id)}
             >
               Book now
@@ -71,7 +71,7 @@ export default function LabsPage() {
       </div>
 
       {selectedTest && (
-        <div className="mt-8 p-6 bg-white rounded-2xl border border-gray-100 shadow-sm max-w-lg">
+        <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm max-w-lg">
           <h3 className="font-bold mb-4">Select date & time for sample collection</h3>
           <p className="text-sm text-gray-500 mb-4">
             Confirmation and reminders (day before, day of) with instructions via app, WhatsApp,

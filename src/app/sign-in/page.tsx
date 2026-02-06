@@ -60,7 +60,7 @@ export default function SignInPage() {
   return (
     <div className="min-h-screen bg-light flex flex-col">
       <header className="border-b border-gray-200 bg-white">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <Link href={ROUTES.HOME} className="flex items-center gap-2 w-fit">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
               <SquarePlus className="text-white w-5 h-5" />
@@ -75,9 +75,9 @@ export default function SignInPage() {
         </div>
       </header>
 
-      <main className="flex-1 flex items-center justify-center px-6 py-8">
-        <div className="w-full max-w-md space-y-6">
-          <h1 className="text-2xl font-bold text-dark">Sign in</h1>
+      <main className="flex-1 flex items-center justify-center px-4 sm:px-6 py-6 sm:py-8 overflow-auto">
+        <div className="w-full max-w-md space-y-4 sm:space-y-6">
+          <h1 className="text-xl sm:text-2xl font-bold text-dark">Sign in</h1>
 
           {mode === 'identifier' && (
             <>
@@ -92,7 +92,7 @@ export default function SignInPage() {
                 placeholder="e.g. 9876543210 or you@example.com"
               />
               {error && <p className="text-sm text-red-500">{error}</p>}
-              <Button className="w-full" size="lg" onClick={sendOtp}>
+              <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={sendOtp}>
                 Send OTP
               </Button>
               <div className="flex gap-4 justify-center">
@@ -127,7 +127,7 @@ export default function SignInPage() {
                 maxLength={6}
               />
               {error && <p className="text-sm text-red-500">{error}</p>}
-              <Button className="w-full" size="lg" onClick={verifyOtp}>
+              <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={verifyOtp}>
                 Verify & sign in
               </Button>
               <button
@@ -155,7 +155,7 @@ export default function SignInPage() {
                 inputMode="numeric"
               />
               {error && <p className="text-sm text-red-500">{error}</p>}
-              <Button className="w-full" size="lg" onClick={signInWithPin}>
+              <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={signInWithPin}>
                 Sign in
               </Button>
               <button
@@ -178,7 +178,7 @@ export default function SignInPage() {
                 placeholder="Enter your password"
               />
               {error && <p className="text-sm text-red-500">{error}</p>}
-              <Button className="w-full" size="lg" onClick={signInWithPassword}>
+              <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={signInWithPassword}>
                 Sign in
               </Button>
               <button
