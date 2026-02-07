@@ -8,12 +8,10 @@ import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { ROUTES } from '@/lib/constants';
 
-type Step = 'details' | 'otp-mobile' | 'otp-email' | 'aadhaar' | 'aadhaar-otp' | 'pin' | 'success';
+type Step = 'details' | 'aadhaar' | 'aadhaar-otp' | 'pin' | 'success';
 
 const STEPS: Step[] = [
   'details',
-  'otp-mobile',
-  'otp-email',
   'aadhaar',
   'aadhaar-otp',
   'pin',
@@ -31,8 +29,6 @@ export default function SignUpPage() {
     mobile: '',
     email: '',
     aadhaar: '',
-    otpMobile: '',
-    otpEmail: '',
     otpAadhaar: '',
     pin: '',
     pinConfirm: '',
@@ -56,8 +52,6 @@ export default function SignUpPage() {
       if (!form.mobile.trim()) e.mobile = 'Mobile number is required';
       if (!form.email.trim()) e.email = 'Email is required';
     }
-    if (step === 'otp-mobile' && !form.otpMobile.trim()) e.otpMobile = 'Enter OTP';
-    if (step === 'otp-email' && !form.otpEmail.trim()) e.otpEmail = 'Enter OTP';
     if (step === 'aadhaar') {
       if (!form.aadhaar.trim()) e.aadhaar = 'Aadhaar number is required';
       else if (!/^\d{12}$/.test(form.aadhaar.replace(/\s/g, ''))) e.aadhaar = 'Enter valid 12-digit Aadhaar';
@@ -75,10 +69,6 @@ export default function SignUpPage() {
     if (!validateStep()) return;
     if (stepIndex < STEPS.length - 1) setStepIndex(stepIndex + 1);
     else router.push(ROUTES.SIGN_IN);
-  };
-
-  const resendOtp = () => {
-    // Placeholder: would call API
   };
 
   return (
@@ -117,7 +107,7 @@ export default function SignUpPage() {
             <div className="space-y-3 sm:space-y-4">
               <h1 className="text-xl sm:text-2xl font-bold text-dark">Create your account</h1>
               <p className="text-gray-600 text-xs sm:text-sm">
-                Enter your details as per Aadhaar. We&apos;ll verify with OTP.
+                Enter your details as per Aadhaar. Next you&apos;ll verify with Aadhaar OTP.
               </p>
               <Input
                 label="Full name"
@@ -184,54 +174,7 @@ export default function SignUpPage() {
                 error={errors.email}
               />
               <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={next}>
-                Continue – Verify mobile with OTP
-              </Button>
-            </div>
-          )}
-
-          {step === 'otp-mobile' && (
-            <div className="space-y-4">
-              <h1 className="text-2xl font-bold">Verify mobile</h1>
-              <p className="text-gray-600 text-sm">
-                We sent a 6-digit OTP to {form.mobile || 'your number'}.
-              </p>
-              <Input
-                label="OTP"
-                value={form.otpMobile}
-                onChange={(e) => update('otpMobile', e.target.value.replace(/\D/g, '').slice(0, 6))}
-                error={errors.otpMobile}
-                placeholder="000000"
-                maxLength={6}
-              />
-              <button
-                type="button"
-                onClick={resendOtp}
-                className="text-sm text-primary hover:underline"
-              >
-                Resend OTP
-              </button>
-              <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={next}>
-                Verify & continue
-              </Button>
-            </div>
-          )}
-
-          {step === 'otp-email' && (
-            <div className="space-y-4">
-              <h1 className="text-2xl font-bold">Verify email</h1>
-              <p className="text-gray-600 text-sm">
-                We sent a 6-digit OTP to {form.email || 'your email'}.
-              </p>
-              <Input
-                label="OTP"
-                value={form.otpEmail}
-                onChange={(e) => update('otpEmail', e.target.value.replace(/\D/g, '').slice(0, 6))}
-                error={errors.otpEmail}
-                placeholder="000000"
-                maxLength={6}
-              />
-              <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={next}>
-                Verify & continue
+                Continue to Aadhaar verification
               </Button>
             </div>
           )}
