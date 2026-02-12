@@ -7,6 +7,7 @@ export const ROUTES = {
   GET_STARTED: '/get-started',
   SIGN_UP: '/signup',
   SIGN_IN: '/sign-in',
+  FAQS: '/faqs',
   DASHBOARD: '/dashboard',
   DASHBOARD_SUBSCRIPTION: '/dashboard/subscription',
   DASHBOARD_HEALTH_RECORDS: '/dashboard/health-records',

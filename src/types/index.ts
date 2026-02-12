@@ -21,6 +21,9 @@ export interface SubscriptionPlan {
   qrCode?: string;
 }
 
+export type ConsultationMode = 'online' | 'offline' | 'both';
+export type AvailabilityTime = 'morning' | 'afternoon' | 'evening';
+
 export interface DoctorCard {
   id: string;
   name: string;
@@ -32,6 +35,12 @@ export interface DoctorCard {
   address?: string;
   mapLink?: string;
   consultationHours?: string;
+  /** City or area for location filter */
+  location?: string;
+  /** Online, in-clinic, or both */
+  consultationMode?: ConsultationMode;
+  /** When they are available (for time filter) */
+  availability?: AvailabilityTime[];
 }
 
 export interface LabTestCard {

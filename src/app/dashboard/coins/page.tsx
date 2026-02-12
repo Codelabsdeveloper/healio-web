@@ -10,7 +10,7 @@ export default function CoinsPage() {
             <Coins className="w-6 h-6 text-accent" />
           </div>
           <div>
-            <p className="text-2xl font-bold text-dark">0</p>
+            <p className="text-2xl font-bold text-dark">100</p>
             <p className="text-sm text-gray-500">Healio Coins</p>
           </div>
         </div>
