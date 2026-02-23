@@ -20,7 +20,7 @@ export function Hero() {
             India&apos;s first clinically-governed adherence platform for chronic care.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
-            <Button asChild href="#benefits" variant="primary" size="lg" className="min-h-[48px] w-full sm:w-auto justify-center touch-manipulation">
+            <Button asChild href={ROUTES.GET_STARTED} variant="primary" size="lg" className="min-h-[48px] w-full sm:w-auto justify-center touch-manipulation">
               Start Subscription <ArrowRight className="ml-2 w-5 h-5 inline shrink-0" />
             </Button>
             <Button asChild href="#conditions" variant="outline" size="lg" className="min-h-[48px] w-full sm:w-auto justify-center touch-manipulation">

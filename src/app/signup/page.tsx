@@ -42,7 +42,7 @@ export default function SignUpPage() {
     if (errors[key]) setErrors((e) => ({ ...e, [key]: '' }));
   };
 
-  const validateStep = (): boolean => {
+  /*const validateStep = (): boolean => {
     const e: Record<string, string> = {};
     if (step === 'details') {
       if (!form.name.trim()) e.name = 'Name is required';
@@ -53,8 +53,9 @@ export default function SignUpPage() {
       if (!form.email.trim()) e.email = 'Email is required';
     }
     if (step === 'aadhaar') {
-      if (!form.aadhaar.trim()) e.aadhaar = 'Aadhaar number is required';
-      else if (!/^\d{12}$/.test(form.aadhaar.replace(/\s/g, ''))) e.aadhaar = 'Enter valid 12-digit Aadhaar';
+      // Aadhaar validation disabled — no validations for Aadhaar number
+      // if (!form.aadhaar.trim()) e.aadhaar = 'Aadhaar number is required';
+      // else if (!/^\d{12}$/.test(form.aadhaar.replace(/\s/g, ''))) e.aadhaar = 'Enter valid 12-digit Aadhaar';
     }
     if (step === 'aadhaar-otp' && !form.otpAadhaar.trim()) e.otpAadhaar = 'Enter OTP';
     if (step === 'pin') {
@@ -63,10 +64,11 @@ export default function SignUpPage() {
     }
     setErrors(e);
     return Object.keys(e).length === 0;
-  };
+  };*/
 
   const next = () => {
-    if (!validateStep()) return;
+    // TODO: Uncomment this when validation is implemented
+    //  if (!validateStep()) return;
     if (stepIndex < STEPS.length - 1) setStepIndex(stepIndex + 1);
     else router.push(ROUTES.SIGN_IN);
   };
@@ -185,13 +187,13 @@ export default function SignUpPage() {
               <p className="text-gray-600 text-sm">
                 We&apos;ll send an OTP to your registered mobile to verify your Aadhaar.
               </p>
+              {/* Aadhaar: no validation — error prop omitted */}
               <Input
                 label="Aadhaar number"
                 value={form.aadhaar}
                 onChange={(e) =>
                   update('aadhaar', e.target.value.replace(/\D/g, '').slice(0, 12))
                 }
-                error={errors.aadhaar}
                 placeholder="12-digit Aadhaar"
                 maxLength={12}
               />
@@ -266,20 +268,21 @@ export default function SignUpPage() {
               </div>
               <h1 className="text-2xl font-bold">Signup successful</h1>
               <p className="text-gray-600">
-                You can now sign in with your mobile/email and 4-digit PIN.
+                You can now Sign in to your account.
               </p>
-              <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={next}>
-                Go to Sign in
+              <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={() => router.push(ROUTES.DASHBOARD)}>
+                Go to Dashboard
               </Button>
             </div>
           )}
 
-          <p className="mt-6 text-center text-sm text-gray-500">
-            Already have an account?{' '}
-            <Link href={ROUTES.SIGN_IN} className="text-primary font-medium hover:underline">
-              Sign in
-            </Link>
-          </p>
+         {/* <p className="mt-6 text-center text-sm text-gray-500">
+         //   Already have an account?{' '}
+         //   <Link href={ROUTES.SIGN_IN} className="text-primary font-medium hover:underline">
+         //     Sign in
+         //   </Link>
+          // </p>
+          */}
         </div>
       </main>
     </div>
