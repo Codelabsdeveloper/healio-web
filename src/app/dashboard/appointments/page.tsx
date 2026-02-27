@@ -133,9 +133,18 @@ export default function AppointmentsPage() {
   const [filterTime, setFilterTime] = useState('All');
   const [filterMode, setFilterMode] = useState('all');
   const [showFilters, setShowFilters] = useState(false);
+  const [activeTab, setActiveTab] = useState<'online' | 'clinics'>('online');
 
   const filteredDoctors = useMemo(() => {
     let list = [...mockDoctors];
+
+    // Tab filter: Online shows online + both, Clinics shows offline + both
+    if (activeTab === 'online') {
+      list = list.filter((d) => d.consultationMode === 'online' || d.consultationMode === 'both');
+    } else {
+      list = list.filter((d) => d.consultationMode === 'offline' || d.consultationMode === 'both');
+    }
+
     if (filterLocation !== 'All') {
       list = list.filter((d) => d.location === filterLocation);
     }
@@ -150,7 +159,7 @@ export default function AppointmentsPage() {
       list = list.filter((d) => d.consultationMode === filterMode || d.consultationMode === 'both');
     }
     return list;
-  }, [filterLocation, filterSpecialty, filterTime, filterMode]);
+  }, [activeTab, filterLocation, filterSpecialty, filterTime, filterMode]);
 
   const activeFilterCount = [filterLocation, filterSpecialty, filterTime, filterMode].filter(
     (v) => v !== 'All' && v !== 'all'
@@ -222,6 +231,43 @@ export default function AppointmentsPage() {
               </span>
             )}
           </button>
+        </div>
+
+        {/* Online / Clinics tabs */}
+        <div className="space-y-2">
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => setActiveTab('online')}
+              className={cn(
+                'flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition touch-manipulation',
+                activeTab === 'online'
+                  ? 'bg-primary text-white'
+                  : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+              )}
+            >
+              <Video className="w-4 h-4" />
+              Online
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveTab('clinics')}
+              className={cn(
+                'flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition touch-manipulation',
+                activeTab === 'clinics'
+                  ? 'bg-primary text-white'
+                  : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+              )}
+            >
+              <Building2 className="w-4 h-4" />
+              Clinics / Hospitals
+            </button>
+          </div>
+          {activeTab === 'online' && (
+            <p className="text-sm text-gray-500">
+              Compulsory Tele Consultation for SOS / 1st Opinion
+            </p>
+          )}
         </div>
 
         {showFilters && (

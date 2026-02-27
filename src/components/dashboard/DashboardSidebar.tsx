@@ -9,6 +9,7 @@ import {
   Calendar,
   FlaskConical,
   Pill,
+  Activity,
   Coins,
   History,
   Settings,
@@ -26,6 +27,7 @@ const mainNav = [
   { href: ROUTES.DASHBOARD_APPOINTMENTS, label: 'Book appointment', icon: Calendar },
   { href: ROUTES.DASHBOARD_LABS, label: 'Order labs', icon: FlaskConical },
   { href: ROUTES.DASHBOARD_MEDICINES, label: 'Order medicines', icon: Pill },
+  { href: ROUTES.DASHBOARD_VITALS, label: 'Record vitals', icon: Activity },
 ];
 
 const moreNav = [

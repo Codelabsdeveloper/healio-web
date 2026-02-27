@@ -77,7 +77,16 @@ export default function SignInPage() {
 
       <main className="flex-1 flex items-center justify-center px-4 sm:px-6 py-6 sm:py-8 overflow-auto">
         <div className="w-full max-w-md space-y-4 sm:space-y-6">
-          <h1 className="text-xl sm:text-2xl font-bold text-dark">Sign in</h1>
+          {/* Logo + tagline */}
+          <div className="flex flex-col items-center text-center mb-2">
+            <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mb-3">
+              <SquarePlus className="text-white w-7 h-7" />
+            </div>
+            <span className="text-2xl font-bold text-primary">Healio</span>
+            <p className="text-sm text-gray-500 mt-1">Care Made Simple. Health Made Accessible.</p>
+          </div>
+
+          <h1 className="text-xl sm:text-2xl font-bold text-dark text-center">Sign in </h1>
 
           {mode === 'identifier' && (
             <>
