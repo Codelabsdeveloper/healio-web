@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import {
-  SquarePlus,
   CreditCard,
   FileText,
   Calendar,
@@ -47,16 +47,14 @@ export function DashboardSidebar({ mobileOpen = false, onMobileClose }: Dashboar
   const navContent = (
     <>
       <div className="p-4 sm:p-6 border-b border-white/10 flex items-center justify-between">
-        <Link href={ROUTES.HOME} className="flex items-center gap-2" onClick={onMobileClose}>
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shrink-0">
-            <SquarePlus className="text-white w-5 h-5" />
-          </div>
-          <div className="min-w-0">
-            <span className="text-lg font-bold leading-none block">Meds</span>
-            <span className="text-[8px] uppercase tracking-widest text-gray-400 font-semibold">
-              by Healio MedHealth
-            </span>
-          </div>
+        <Link href={ROUTES.HOME} onClick={onMobileClose}>
+          <Image
+            src="/logo.png"
+            alt="Healio MedHealth"
+            width={140}
+            height={42}
+            className="h-11 w-auto brightness-0 invert"
+          />
         </Link>
         {onMobileClose && (
           <button

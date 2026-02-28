@@ -23,7 +23,7 @@ export function Navbar() {
       <nav className="fixed w-full z-50 glass-morphism shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
           <Logo />
-          <div className="hidden md:flex gap-8 items-center font-medium">
+          <div className="hidden md:flex gap-10 items-center font-medium">
             {navLinks.map((link) => (
               <Link
                 key={link.href}

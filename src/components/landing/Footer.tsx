@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { SquarePlus } from 'lucide-react';
+import Image from 'next/image';
 import { ROUTES } from '@/lib/constants';
 
 const platformLinks = [
@@ -22,16 +22,14 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-16">
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <SquarePlus className="text-white w-4 h-4" />
-              </div>
-              <div>
-                <span className="text-lg font-bold text-white leading-none block">Meds</span>
-                <span className="text-[8px] uppercase tracking-widest text-gray-400 font-semibold">
-                  by Healio MedHealth
-                </span>
-              </div>
+            <div className="mb-6">
+              <Image
+                src="/logo.png"
+                alt="Healio MedHealth"
+                width={140}
+                height={42}
+                className="h-11 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Rebuilding trust in medicines through clinical governance and personalized care.

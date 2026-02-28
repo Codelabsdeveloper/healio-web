@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { SquarePlus } from 'lucide-react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { ROUTES } from '@/lib/constants';
@@ -61,16 +61,15 @@ export default function SignInPage() {
     <div className="min-h-screen bg-light flex flex-col">
       <header className="border-b border-gray-200 bg-white">
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
-          <Link href={ROUTES.HOME} className="flex items-center gap-2 w-fit">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <SquarePlus className="text-white w-5 h-5" />
-            </div>
-            <div>
-              <span className="text-xl font-bold text-primary leading-none block">Meds</span>
-              <span className="text-[10px] uppercase tracking-widest text-gray-500 font-semibold">
-                by Healio MedHealth
-              </span>
-            </div>
+          <Link href={ROUTES.HOME} className="w-fit">
+            <Image
+              src="/logo.png"
+              alt="Healio MedHealth"
+              width={160}
+              height={48}
+              className="h-16 w-auto"
+              priority
+            />
           </Link>
         </div>
       </header>
@@ -79,10 +78,13 @@ export default function SignInPage() {
         <div className="w-full max-w-md space-y-4 sm:space-y-6">
           {/* Logo + tagline */}
           <div className="flex flex-col items-center text-center mb-2">
-            <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mb-3">
-              <SquarePlus className="text-white w-7 h-7" />
-            </div>
-            <span className="text-2xl font-bold text-primary">Healio</span>
+            <Image
+              src="/logo.png"
+              alt="Healio MedHealth"
+              width={200}
+              height={60}
+              className="h-24 w-auto mb-3"
+            />
             <p className="text-sm text-gray-500 mt-1">Care Made Simple. Health Made Accessible.</p>
           </div>
 
