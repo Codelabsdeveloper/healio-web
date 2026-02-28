@@ -86,13 +86,11 @@ export default function SignInPage() {
             <p className="text-sm text-gray-500 mt-1">Care Made Simple. Health Made Accessible.</p>
           </div>
 
-          <h1 className="text-xl sm:text-2xl font-bold text-dark text-center">Sign in </h1>
+         {/* <h1 className="text-xl sm:text-2xl font-bold text-dark text-center">Sign in </h1> */}
 
           {mode === 'identifier' && (
             <>
-              <p className="text-gray-600 text-sm">
-                Enter your mobile number or email to receive an OTP, or sign in with PIN/password.
-              </p>
+              
               <Input
                 label="Mobile or email"
                 type={isEmail ? 'email' : 'tel'}
@@ -100,6 +98,9 @@ export default function SignInPage() {
                 onChange={(e) => setIdentifier(e.target.value)}
                 placeholder="e.g. 9876543210 or you@example.com"
               />
+              <p className="text-gray-600 text-sm">
+                Enter your mobile number or email to receive an OTP, or sign in with PIN/password.
+              </p>
               {error && <p className="text-sm text-red-500">{error}</p>}
               <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={sendOtp}>
                 Send OTP

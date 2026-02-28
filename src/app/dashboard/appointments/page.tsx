@@ -240,7 +240,7 @@ export default function AppointmentsPage() {
               type="button"
               onClick={() => setActiveTab('online')}
               className={cn(
-                'flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition touch-manipulation',
+                'flex items-center gap-2 px-5 py-4.5 rounded-xl text-sm font-semibold transition touch-manipulation',
                 activeTab === 'online'
                   ? 'bg-primary text-white'
                   : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
@@ -253,7 +253,7 @@ export default function AppointmentsPage() {
               type="button"
               onClick={() => setActiveTab('clinics')}
               className={cn(
-                'flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition touch-manipulation',
+                'flex items-center gap-2 px-5 py-4.5 rounded-xl text-sm font-semibold transition touch-manipulation',
                 activeTab === 'clinics'
                   ? 'bg-primary text-white'
                   : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
@@ -263,11 +263,6 @@ export default function AppointmentsPage() {
               Clinics / Hospitals
             </button>
           </div>
-          {activeTab === 'online' && (
-            <p className="text-sm text-gray-500">
-              Compulsory Tele Consultation for SOS / 1st Opinion
-            </p>
-          )}
         </div>
 
         {showFilters && (
