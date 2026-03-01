@@ -35,9 +35,9 @@ export default function DashboardLayout({
             <Image
               src="/logo.png"
               alt="Healio MedHealth"
-              width={120}
-              height={36}
-              className="h-12 w-auto"
+              width={200}
+              height={60}
+              className="h-20 w-auto"
             />
           </Link>
         </header>

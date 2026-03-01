@@ -51,9 +51,9 @@ export function DashboardSidebar({ mobileOpen = false, onMobileClose }: Dashboar
           <Image
             src="/logo.png"
             alt="Healio MedHealth"
-            width={140}
-            height={42}
-            className="h-11 w-auto brightness-0 invert"
+            width={160}
+            height={60}
+            className="h-16 w-auto brightness-0 invert"
           />
         </Link>
         {onMobileClose && (

@@ -81,11 +81,11 @@ export default function SignInPage() {
             <Image
               src="/logo.png"
               alt="Healio MedHealth"
-              width={200}
-              height={60}
-              className="h-24 w-auto mb-3"
+              width={220}
+              height={80}
+              className="h-28 w-auto -mb-4"
             />
-            <p className="text-sm text-gray-500 mt-1">Care Made Simple. Health Made Accessible.</p>
+            <p className="text-sm font-bold text-[#18627a]">Care Made Simple. Health Made Accessible.</p>
           </div>
 
          {/* <h1 className="text-xl sm:text-2xl font-bold text-dark text-center">Sign in </h1> */}
