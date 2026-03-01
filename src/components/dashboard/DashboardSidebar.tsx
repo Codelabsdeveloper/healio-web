@@ -2,13 +2,14 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import {
-  SquarePlus,
   CreditCard,
   FileText,
   Calendar,
   FlaskConical,
   Pill,
+  Activity,
   Coins,
   History,
   Settings,
@@ -26,6 +27,7 @@ const mainNav = [
   { href: ROUTES.DASHBOARD_APPOINTMENTS, label: 'Book appointment', icon: Calendar },
   { href: ROUTES.DASHBOARD_LABS, label: 'Order labs', icon: FlaskConical },
   { href: ROUTES.DASHBOARD_MEDICINES, label: 'Order medicines', icon: Pill },
+  { href: ROUTES.DASHBOARD_VITALS, label: 'Record vitals', icon: Activity },
 ];
 
 const moreNav = [
@@ -45,16 +47,14 @@ export function DashboardSidebar({ mobileOpen = false, onMobileClose }: Dashboar
   const navContent = (
     <>
       <div className="p-4 sm:p-6 border-b border-white/10 flex items-center justify-between">
-        <Link href={ROUTES.HOME} className="flex items-center gap-2" onClick={onMobileClose}>
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shrink-0">
-            <SquarePlus className="text-white w-5 h-5" />
-          </div>
-          <div className="min-w-0">
-            <span className="text-lg font-bold leading-none block">Meds</span>
-            <span className="text-[8px] uppercase tracking-widest text-gray-400 font-semibold">
-              by Healio MedHealth
-            </span>
-          </div>
+        <Link href={ROUTES.HOME} onClick={onMobileClose}>
+          <Image
+            src="/logo.png"
+            alt="Healio MedHealth"
+            width={160}
+            height={60}
+            className="h-16 w-auto brightness-0 invert"
+          />
         </Link>
         {onMobileClose && (
           <button

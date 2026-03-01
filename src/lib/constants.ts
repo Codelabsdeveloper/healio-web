@@ -17,6 +17,7 @@ export const ROUTES = {
   DASHBOARD_SETTINGS: '/dashboard/settings',
   DASHBOARD_COINS: '/dashboard/coins',
   DASHBOARD_REDEEM_HISTORY: '/dashboard/redeem-history',
+  DASHBOARD_VITALS: '/dashboard/vitals',
 } as const;
 
 export type RouteKey = keyof typeof ROUTES;

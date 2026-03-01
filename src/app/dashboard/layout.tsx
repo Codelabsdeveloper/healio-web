@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
-import { SquarePlus } from 'lucide-react';
+import Image from 'next/image';
 import { DashboardSidebar } from '@/components/dashboard/DashboardSidebar';
 import { ROUTES } from '@/lib/constants';
 
@@ -31,11 +31,14 @@ export default function DashboardLayout({
           >
             <Menu className="w-6 h-6 text-dark" />
           </button>
-          <Link href={ROUTES.DASHBOARD} className="flex items-center gap-2 min-w-0">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shrink-0">
-              <SquarePlus className="text-white w-4 h-4" />
-            </div>
-            <span className="font-bold text-dark truncate">Meds</span>
+          <Link href={ROUTES.DASHBOARD} className="min-w-0">
+            <Image
+              src="/logo.png"
+              alt="Healio MedHealth"
+              width={200}
+              height={60}
+              className="h-20 w-auto"
+            />
           </Link>
         </header>
         <main className="flex-1 overflow-auto">

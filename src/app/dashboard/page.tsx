@@ -5,6 +5,7 @@ import {
   Calendar,
   FlaskConical,
   Pill,
+  Activity,
   ArrowRight,
 } from 'lucide-react';
 import { ROUTES } from '@/lib/constants';
@@ -39,6 +40,12 @@ const cards = [
     title: 'Order medicines',
     description: 'E-prescription linked orders, track delivery, refill reminders.',
     icon: Pill,
+  },
+  {
+    href: ROUTES.DASHBOARD_VITALS,
+    title: 'Record vitals',
+    description: 'Temperature, HR, SpO2, RR, blood pressure, body weight, height, blood group — manually or from EHR.',
+    icon: Activity,
   },
 ];
 

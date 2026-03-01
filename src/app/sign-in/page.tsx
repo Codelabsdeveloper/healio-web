@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { SquarePlus } from 'lucide-react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { ROUTES } from '@/lib/constants';
@@ -61,29 +61,38 @@ export default function SignInPage() {
     <div className="min-h-screen bg-light flex flex-col">
       <header className="border-b border-gray-200 bg-white">
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
-          <Link href={ROUTES.HOME} className="flex items-center gap-2 w-fit">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <SquarePlus className="text-white w-5 h-5" />
-            </div>
-            <div>
-              <span className="text-xl font-bold text-primary leading-none block">Meds</span>
-              <span className="text-[10px] uppercase tracking-widest text-gray-500 font-semibold">
-                by Healio MedHealth
-              </span>
-            </div>
+          <Link href={ROUTES.HOME} className="w-fit">
+            <Image
+              src="/logo.png"
+              alt="Healio MedHealth"
+              width={160}
+              height={48}
+              className="h-16 w-auto"
+              priority
+            />
           </Link>
         </div>
       </header>
 
-      <main className="flex-1 flex items-center justify-center px-4 sm:px-6 py-6 sm:py-8 overflow-auto">
+      <main className="flex-1 flex items-start justify-center px-4 sm:px-6 pt-10 sm:pt-16 pb-6 sm:pb-8 overflow-auto">
         <div className="w-full max-w-md space-y-4 sm:space-y-6">
-          <h1 className="text-xl sm:text-2xl font-bold text-dark">Sign in</h1>
+          {/* Logo + tagline */}
+          <div className="flex flex-col items-center text-center mb-16">
+            <Image
+              src="/logo.png"
+              alt="Healio MedHealth"
+              width={220}
+              height={80}
+              className="h-28 w-auto -mb-4"
+            />
+            <p className="text-sm font-bold text-[#18627a]">Care Made Simple. Health Made Accessible.</p>
+          </div>
+
+         {/* <h1 className="text-xl sm:text-2xl font-bold text-dark text-center">Sign in </h1> */}
 
           {mode === 'identifier' && (
             <>
-              <p className="text-gray-600 text-sm">
-                Enter your mobile number or email to receive an OTP, or sign in with PIN/password.
-              </p>
+              
               <Input
                 label="Mobile or email"
                 type={isEmail ? 'email' : 'tel'}
@@ -91,6 +100,9 @@ export default function SignInPage() {
                 onChange={(e) => setIdentifier(e.target.value)}
                 placeholder="e.g. 9876543210 or you@example.com"
               />
+              <p className="text-gray-600 text-sm">
+                Enter your mobile number or email to receive an OTP, or sign in with PIN/password.
+              </p>
               {error && <p className="text-sm text-red-500">{error}</p>}
               <Button className="w-full min-h-[48px] touch-manipulation" size="lg" onClick={sendOtp}>
                 Send OTP
