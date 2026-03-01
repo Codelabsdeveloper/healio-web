@@ -74,10 +74,10 @@ export default function SignInPage() {
         </div>
       </header>
 
-      <main className="flex-1 flex items-center justify-center px-4 sm:px-6 py-6 sm:py-8 overflow-auto">
+      <main className="flex-1 flex items-start justify-center px-4 sm:px-6 pt-10 sm:pt-16 pb-6 sm:pb-8 overflow-auto">
         <div className="w-full max-w-md space-y-4 sm:space-y-6">
           {/* Logo + tagline */}
-          <div className="flex flex-col items-center text-center mb-2">
+          <div className="flex flex-col items-center text-center mb-16">
             <Image
               src="/logo.png"
               alt="Healio MedHealth"
