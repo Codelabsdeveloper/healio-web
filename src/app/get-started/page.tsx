@@ -20,9 +20,20 @@ export default function GetStartedPage() {
           </Link>
         </div>
       </header>
-      <main className="flex-1 flex items-center justify-center px-4 sm:px-6 py-8 sm:py-12">
+       {/* Logo + tagline */}
+       <div className="flex flex-col items-center text-center mt-50 ">
+            <Image
+              src="/logo.png"
+              alt="Healio MedHealth"
+              width={220}
+              height={80}
+              className="h-28 w-auto -mb-4"
+            />
+            <p className="text-sm font-bold text-[#18627a]">Care Made Simple. Health Made Accessible.</p>
+          </div>
+      <main className="flex-1 flex items-center justify-center px-4 sm:px-16 py-8 sm:py-12 mb-80" >
         <div className="max-w-md w-full text-center space-y-6 sm:space-y-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-dark">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#18627a]">
             Get started with Meds
           </h1>
           <p className="text-gray-600 text-sm sm:text-base">
