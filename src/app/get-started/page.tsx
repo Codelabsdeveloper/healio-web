@@ -6,7 +6,7 @@ import { ROUTES } from '@/lib/constants';
 export default function GetStartedPage() {
   return (
     <div className="min-h-screen bg-light flex flex-col">
-      <header className="border-b border-gray-200 bg-white">
+      {/*   <header className="border-b border-gray-200 bg-white">
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <Link href={ROUTES.HOME} className="w-fit">
             <Image
@@ -19,7 +19,7 @@ export default function GetStartedPage() {
             />
           </Link>
         </div>
-      </header>
+      </header> */}
        {/* Logo + tagline */}
        <div className="flex flex-col items-center text-center mt-50 ">
             <Image
